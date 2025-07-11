@@ -1,11 +1,62 @@
-/* 
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url(../img/FondoSemaforo.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
 
-*/
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.traffic-light-top {
+	width: 1rem;
+	height: 6rem;
+	background: #1a1a1a;
+	border-radius: 10px 10px 0 0;
+	box-shadow: inset 0 0 5px #000;
+}
+
+/* Cuerpo del semáforo */
+.traffic-light-body {
+	width: 90px;
+	padding: 20px 10px;
+	background: linear-gradient(to bottom, #2e2e2e, #111);
+	border-radius: 20px;
+	box-shadow: inset 0 0 15px #000, 0 5px 25px rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+/* Luces base */
+.traffic-light-body span {
+	display: block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #2e2e2e;
+	box-shadow: inset 0 0 10px #000;
+}
+
+.red-light {
+	background: radial-gradient(circle at 30% 30%, #ff4c4c, #b00000) !important;
+	box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.6) !important;
+}
+
+.yellow-light {
+	background: radial-gradient(circle at 30% 30%, #fff94c, #bba700) !important;
+	box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.5) !important;
+}
+
+.green-light {
+	background: radial-gradient(circle at 30% 30%, #4cff4c, #00b000) !important;
+	box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.5) !important;
+}
