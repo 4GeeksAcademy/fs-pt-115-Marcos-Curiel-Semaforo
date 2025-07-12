@@ -1,14 +1,20 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
 import { TrafficLight } from "./TrafficLight";
+import { RandomButton } from "./RandomButton";
 
-//create your first component
 const Home = () => {
+	const [extraLigths, setExtraLigths] = useState([]);
+
+	const addRandomColor = () => {
+		const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+		setExtraLigths(prev => [...prev, color]);
+	};
 
 	return (
-		<TrafficLight />
+		<section>
+			<TrafficLight extraLigths={extraLigths} />
+			<RandomButton onAddColor={addRandomColor} />
+		</section>
 	);
 };
 
